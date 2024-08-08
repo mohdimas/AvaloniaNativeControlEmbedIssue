@@ -3,28 +3,72 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:nativeControls="clr-namespace:AvaloniaScrollViewerExample.NativeControls"
-        mc:Ignorable="d" d:DesignWidth="600" d:DesignHeight="600"
+        mc:Ignorable="d"
+        d:DesignWidth="600"
+        d:DesignHeight="600"
         x:Class="AvaloniaScrollViewerExample.MainWindow"
         Title="AvaloniaScrollViewerExample-11.x">
-    <ScrollViewer HorizontalAlignment="Stretch"
-                  VerticalAlignment="Stretch">
-        <StackPanel>
-            <Panel HorizontalAlignment="Stretch"
-                   Height="300"
-                   Background="Red"/>
-            <Panel HorizontalAlignment="Stretch"
-                   Height="40"
-                   Background="Blue"/>
-            <nativeControls:EmbedSample HorizontalAlignment="Center"
-                                        VerticalAlignment="Stretch"
-                                        Height="500"
-                                        Width="500"/>
-            <Panel HorizontalAlignment="Stretch"
-                   Height="40"
-                   Background="Blue"/>
-            <Panel HorizontalAlignment="Stretch"
-                   Height="300"
-                   Background="Red"/>
+    <Panel>
+        <ScrollViewer HorizontalAlignment="Stretch"
+                      VerticalAlignment="Stretch">
+            <StackPanel>
+                <Panel HorizontalAlignment="Stretch"
+                       Height="300"
+                       Background="Red" />
+                <Panel HorizontalAlignment="Stretch"
+                       Height="40"
+                       Background="Blue" />
+                <nativeControls:EmbedSample HorizontalAlignment="Center"
+                                            VerticalAlignment="Stretch"
+                                            Height="500"
+                                            Width="500" />
+                <Panel HorizontalAlignment="Stretch"
+                       Height="40"
+                       Background="Blue" />
+                <Panel HorizontalAlignment="Stretch"
+                       Height="300"
+                       Background="Red" />
+                <nativeControls:EmbedSample HorizontalAlignment="Center"
+                                            VerticalAlignment="Stretch"
+                                            Height="500"
+                                            Width="500" />
+                <Panel HorizontalAlignment="Stretch"
+                       Height="40"
+                       Background="Blue" />
+                <Panel HorizontalAlignment="Stretch"
+                       Height="300"
+                       Background="Red" />
+            </StackPanel>
+        </ScrollViewer>
+        <StackPanel VerticalAlignment="Top">
+            <CheckBox x:Name="CheckBox"
+                      IsChecked="True" />
+            <Path Width="50"
+                  Height="50"
+                  Fill="Aqua"
+                  Stretch="Uniform"
+                  IsVisible="{Binding #CheckBox.IsChecked}"
+                  Data="M0 0 M16 16 M13.5104 12.747C14.2952 11.7615 14.8206 10.5875 15.0293 9.35346L12.8963 8.99889C12.7471 9.87942 12.3731 10.7171 11.812 11.4198L13.5104 12.747Z M8.82762 15.5C9.98438 15.3072 11.0979 14.8412 12.0449 14.1514L10.7628 12.4256C10.0882 12.9173 9.29465 13.2505 8.46871 13.3876L8.82762 15.5Z M6.30828 15.5L6.66504 13.3865C5.80125 13.243 4.97531 12.8863 4.27693 12.3539L2.95909 14.0528C3.93747 14.7984 5.09531 15.2986 6.30828 15.5Z M7.56757 0.60712C9.59243 0.60712 11.5135 1.42016 12.9168 2.80522L15.2432 0.5L16 7.35567L9.08108 6.60583L11.3892 4.31882C10.3859 3.33011 9.01405 2.74952 7.56757 2.74952C4.58703 2.74952 2.16216 5.15221 2.16216 8.10551C2.16216 9.24098 2.51567 10.325 3.18594 11.242L1.43351 12.4985C0.496216 11.2131 0 9.6941 0 8.10551C0 3.97068 3.39567 0.60712 7.56757 0.60712Z">
+                <Path.Styles>
+                    <Style Selector="Path">
+                        <!-- <Setter Property="RenderTransformOrigin" -->
+                        <!--         Value="46%,51%" /> -->
+                        <Style.Animations>
+                            <Animation Duration="0:0:1"
+                                       IterationCount="Infinite">
+                                <KeyFrame Cue="0%">
+                                    <Setter Property="RotateTransform.Angle"
+                                            Value="-360.0" />
+                                </KeyFrame>
+                                <KeyFrame Cue="100%">
+                                    <Setter Property="RotateTransform.Angle"
+                                            Value="0.0" />
+                                </KeyFrame>
+                            </Animation>
+                        </Style.Animations>
+                    </Style>
+                </Path.Styles>
+            </Path>
         </StackPanel>
-    </ScrollViewer>
+    </Panel>
 </Window>

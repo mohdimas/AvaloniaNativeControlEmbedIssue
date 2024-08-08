@@ -25,6 +25,16 @@
             <Panel HorizontalAlignment="Stretch"
                    Height="300"
                    Background="Red"/>
+            <nativeControls:EmbedSample HorizontalAlignment="Center"
+                                        VerticalAlignment="Stretch"
+                                        Height="500"
+                                        Width="500"/>
+            <Panel HorizontalAlignment="Stretch"
+                   Height="40"
+                   Background="Blue"/>
+            <Panel HorizontalAlignment="Stretch"
+                   Height="300"
+                   Background="Red"/>
         </StackPanel>
     </ScrollViewer>
 </Window>
